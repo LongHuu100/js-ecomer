@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Menu from './component/demo/Menu';
+import Content from './component/demo/Content';
+import Footer from './component/demo/Footer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props){
+    super(props);
+    this.state ={
+      data:'T3h'
+    }
+  }
+  changeState = () =>{
+    this.setState({
+      data:'State da thay doi'
+    })
+  }
+  render() {
+    return (
+      <div>
+        <Menu />
+        <Content />
+        {this.state.data}
+        <button onClick = {() =>this.changeState()} >Click</button>
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;
