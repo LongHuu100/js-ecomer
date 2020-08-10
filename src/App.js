@@ -4,11 +4,11 @@ import Content from './component/demo/Content';
 import Footer from './component/demo/Footer';
 
 class App extends Component {
+    state = {
+        data:'T3h'
+    }
   constructor(props){
     super(props);
-    this.state ={
-      data:'T3h'
-    }
   }
   changeState = () =>{
     this.setState({
